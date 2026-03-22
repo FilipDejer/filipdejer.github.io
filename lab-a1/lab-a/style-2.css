@@ -1,0 +1,107 @@
+body {
+    font-family: 'Inter', sans-serif;
+    color: #fdf6e3;
+    background: url('tlo2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 8, 6, 0.82);
+    z-index: -1;
+}
+
+header {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 20px 40px;
+    background-color: rgba(26, 17, 12, 0.9);
+    border-radius: 8px;
+    border-bottom: 2px solid #d9a06f;
+}
+
+header h1 {
+    color: #d9a06f;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: rgba(253, 246, 227, 0.7);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto 60px;
+    padding: 40px;
+    background-color: rgba(26, 17, 12, 0.9);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #f5c469;
+    font-weight: 600;
+    margin-top: 30px;
+    border-bottom: 2px solid rgba(245, 196, 105, 0.3);
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #d9a06f;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: disc;
+    color: #fdf6e3;
+    margin-left: 20px;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(26, 17, 12, 0.9);
+    color: rgba(253, 246, 227, 0.5);
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    header {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    main {
+        padding: 20px;
+        margin: 10px;
+    }
+    h2 {
+        border-bottom-width: 1px;
+    }
+}
