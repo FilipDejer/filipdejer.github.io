@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> - Filip Dejer 57727 PTW LAB B</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista</h1>
+
+        <input type="text" id="searchInput" placeholder="Szukaj...">
+        <div class="add-item">
+            <input type="text" id="addInput" placeholder="Dodaj nowy element">
+            <button id="addButton">Dodaj</button>
+        </div>
+
+        <ul id="itemList" class="list">
+        </ul>
+
+        <div class="deadline-section">
+            <label for="deadlineInput">Termin wykonania zadania:</label>
+            <input type="datetime-local" id="deadlineInput">
+        </div>
+
+        <button id="deleteButton" class="delete-button">Usuń zaznaczone</button>
+    </div>
+</body>
+</html>
