@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <h1 class="h2 mb-4">Dodaj nową pozycję</h1>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-4">
+      <form action="/books/create" method="POST">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Tytuł książki</label>
+          <input type="text" name="title" class="form-control" placeholder="Wpisz tytuł..." required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Liczba stron</label>
+          <input type="number" name="pages" class="form-control" placeholder="np. 350" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Opis pozycji</label>
+          <textarea name="description" class="form-control" rows="4" placeholder="Dodaj krótki opis lub recenzję..."></textarea>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-success">Zapisz w bazie</button>
+          <a href="/books" class="btn btn-outline-secondary">Anuluj</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

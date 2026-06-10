@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <h1 class="h2 mb-4">Szczegóły: <%= book.title %></h1>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-4">
+      <div class="row mb-3">
+        <div class="col-sm-3 fw-bold text-muted">ID bazy danych:</div>
+        <div class="col-sm-9"><%= book.id %></div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-3 fw-bold text-muted">Tytuł pozycji:</div>
+        <div class="col-sm-9 fw-bold text-primary"><%= book.title %></div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-3 fw-bold text-muted">Objętość (strony):</div>
+        <div class="col-sm-9"><%= book.pages %></div>
+      </div>
+      <div class="row mb-0">
+        <div class="col-sm-3 fw-bold text-muted">Opis / Uwagi:</div>
+        <div class="col-sm-9 text-secondary"><%= book.description || 'Brak opisu.' %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2">
+    <a href="/books" class="btn btn-secondary">Powrót do listy</a>
+    <a href="/books/<%= book.id %>/edit" class="btn btn-warning">Edytuj dane</a>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

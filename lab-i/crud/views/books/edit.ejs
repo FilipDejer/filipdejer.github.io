@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <h1 class="h2 mb-4">Edytuj pozycję: <%= book.title %></h1>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-4">
+      <form action="/books/<%= book.id %>/edit" method="POST" class="mb-4">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Tytuł książki</label>
+          <input type="text" name="title" class="form-control" value="<%= book.title %>" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Liczba stron</label>
+          <input type="number" name="pages" class="form-control" value="<%= book.pages %>" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-bold">Opis pozycji</label>
+          <textarea name="description" class="form-control" rows="4"><%= book.description %></textarea>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+          <a href="/books" class="btn btn-outline-secondary">Wróć</a>
+        </div>
+      </form>
+
+      <hr class="my-4">
+
+      <div class="bg-light p-3 rounded d-flex justify-content-between align-items-center border border-danger-subtle">
+        <div>
+        </div>
+        <form action="/books/<%= book.id %>/delete" method="POST">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Czy na pewno chcesz bezpowrotnie usunąć tę książkę?')">Usuń pozycję</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
