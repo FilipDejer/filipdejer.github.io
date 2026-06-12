@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #2c3e50;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#cityInput {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+#getWeatherBtn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #2980b9;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+#getWeatherBtn:hover {
+  background-color: #3498db;
+}
+
+.hidden {
+  display: none !important;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#currentWeather {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+#currentWeather h2 {
+  margin-top: 0;
+}
+
+.main-temp {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+
+.desc {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#forecast h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+#forecastContainer {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.9);
+  min-width: 160px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.forecast-card .f-temp {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+
+#forecastContainer::-webkit-scrollbar {
+  height: 10px;
+}
+#forecastContainer::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.4);
+  border-radius: 5px;
+}
+#forecastContainer::-webkit-scrollbar-thumb {
+  background: #2980b9;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  #forecastContainer {
+    flex-direction: column;
+  }
+  .forecast-card {
+    min-width: 100%;
+  }
+}
