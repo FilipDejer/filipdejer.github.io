@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="h2 mb-4">Edytuj: {{ book['title'] }}</h1>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-4">
+            <form action="{{ url_for('edit', id=book['id']) }}" method="POST" class="mb-4">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Tytuł</label>
+                    <input type="text" name="title" class="form-control" value="{{ book['title'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Liczba stron</label>
+                    <input type="number" name="pages" class="form-control" value="{{ book['pages'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Opis</label>
+                    <textarea name="description" class="form-control" rows="4">{{ book['description'] }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Wróć</a>
+            </form>
+
+            <hr class="my-4">
+            <form action="{{ url_for('delete', id=book['id']) }}" method="POST">
+                <button type="submit" class="btn btn-danger">Usuń bezpowrotnie</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

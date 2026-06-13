@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 text-dark">Lista Książek</h1>
+        <a href="{{ url_for('create') }}" class="btn btn-success shadow-sm">Dodaj nową</a>
+    </div>
+
+    <div class="table-responsive shadow-sm bg-white p-3 rounded">
+        <table class="table table-striped align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th><th>Tytuł</th><th>Strony</th><th class="text-center">Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book['id'] }}</td>
+                    <td class="fw-bold">{{ book['title'] }}</td>
+                    <td><span class="badge bg-secondary p-2">{{ book['pages'] }} str.</span></td>
+                    <td class="text-center">
+                        <a href="{{ url_for('show', id=book['id']) }}" class="btn btn-sm btn-info text-white">Szczegóły</a>
+                        <a href="{{ url_for('edit', id=book['id']) }}" class="btn btn-sm btn-warning">Edytuj</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr><td colspan="4" class="text-center py-4">Brak pozycji w bazie.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

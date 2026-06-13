@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="h2 mb-4">Dodaj książkę</h1>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-4">
+            <form action="{{ url_for('create') }}" method="POST">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Tytuł</label>
+                    <input type="text" name="title" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Liczba stron</label>
+                    <input type="number" name="pages" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Opis</label>
+                    <textarea name="description" class="form-control" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Zapisz</button>
+                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Anuluj</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="h2 mb-4">Szczegóły: {{ book['title'] }}</h1>
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-4">
+            <p><strong>ID:</strong> {{ book['id'] }}</p>
+            <p><strong>Tytuł:</strong> {{ book['title'] }}</p>
+            <p><strong>Liczba stron:</strong> {{ book['pages'] }}</p>
+            <p><strong>Opis:</strong> {{ book['description'] }}</p>
+        </div>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Powrót</a>
+        <a href="{{ url_for('edit', id=book['id']) }}" class="btn btn-warning">Edytuj</a>
+    </div>
+</div>
+{% endblock %}
